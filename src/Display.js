@@ -14,12 +14,16 @@ function Display(props) {
 
   return (
     <div className="Display">
-      {`${props.snacker.first_name} ${props.snacker.last_name} ${props.verb}`}
-      {singularChecker(title) && <div>a</div>} {`${title}`}
-      <Images product={props.product} beaverUrl={props.beaverUrl} />
-      <button onClick={props.generateIndices}>
-        Click to generate a beaver facing solution.
-      </button>
+      
+        <div className="lead">
+          <div className="piece">{props.snacker.first_name}</div>{" "}
+          <div className="piece">{props.snacker.last_name}</div>{" "}
+          <div className="piece"><b>{props.verb}</b></div>{" "}
+          {singularChecker(title) && <div className="piece">a</div>}{" "}
+          <div className="piece">{title}</div>.
+        </div>
+        <Images product={props.product} beaverUrl={props.beaverUrl} />
+      
     </div>
   );
 }

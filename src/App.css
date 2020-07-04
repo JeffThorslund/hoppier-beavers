@@ -1,8 +1,5 @@
 .App {
-  background-image: linear-gradient(135deg, #86bbd8, #33658a);
-  width: 100%;
-  min-height: 100vh;
-  height: 100%;
+  background-color: #efe6dd;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,19 +10,79 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-family: "Cabin Condensed", sans-serif;
+  color: #231f20;
+  padding: 0% 20%;
+  min-height: 100vh;
+  height: 100%;
 }
 
 .App .Header {
   text-align: center;
-  font-size: 26px;
-  padding: 15px;
 }
 
-.App .Header #grab {
-  font-size: 36px;
+.App .Header .title {
+  font-size: 28px;
+  padding: 20px;
+  border: #231f20 3px solid;
+  border-radius: 15px;
+  background-color: #7ebdc2;
+  margin-top: 10px;
 }
 
-.App .Header .statement {
-  padding: 10px;
+.App .Header .body {
+  margin-top: 10px;
+  font-size: 20px;
+  padding: 20px;
+  background-color: #e29a8d;
+  border: #231f20 3px solid;
+  border-radius: 15px;
+}
+
+.App .Display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: #231f20 3px solid;
+  border-radius: 15px;
+  background-color: #f3dfa2;
+  margin-top: 10px;
+}
+
+.App .Display .lead {
+  font-size: 24px;
+  padding: 25px 20px 10px 20px;
+}
+
+.App .Display .lead .piece {
+  display: inline-block;
+}
+
+.App .Display .Images img {
+  margin: 10px;
+  border: #231f20 3px solid;
+  border-radius: 15px;
+}
+
+.App .Button {
+  border: #231f20 3px solid;
+  border-radius: 15px;
+  padding: 20px;
+  font-size: 24px;
+  margin: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.App .Button:hover {
+  background-color: #231f20;
+  color: #efe6dd;
 }
 /*# sourceMappingURL=App.css.map */

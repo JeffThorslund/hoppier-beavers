@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Display from "./Display";
+import Button from "./Button"
 var gis = require("g-i-s");
 
 function Logic() {
@@ -83,13 +84,16 @@ function Logic() {
   return (
     <>
       {snackers && stock && beavers && (
+        <>
         <Display
           snacker={snackers[snackerIndex]}
           product={stock.products[stockIndex]}
           verb={verbs[verbIndex]}
           beaverUrl={beavers[beaverIndex].url}
-          generateIndices={generateIndices}
+          
         />
+        <Button generateIndices={generateIndices} />
+        </>
       )}
     </>
   );
