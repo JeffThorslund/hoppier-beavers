@@ -1,4 +1,4 @@
-# Welcome to Inside The Dam
+# Welcome Inside The Dam
 
 Feel free to poke around. 
 
