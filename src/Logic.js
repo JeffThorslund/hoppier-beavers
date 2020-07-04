@@ -3,8 +3,8 @@ import Display from "./Display";
 import Button from "./Button";
 
 //imported for offline use and cors issues
-let snackersData = require("./data/snackers.json");
-let stockData = require("./data/stock.json");
+//let snackersData = require("./data/snackers.json");
+//let stockData = require("./data/stock.json");
 
 var gis = require("g-i-s-j");
 
