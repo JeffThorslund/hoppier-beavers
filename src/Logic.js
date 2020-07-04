@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Display from "./Display";
-import Button from "./Button"
-var gis = require("g-i-s");
+import Button from "./Button";
+
+//imported for offline use and cors issues
+let snackersData = require("./data/snackers.json");
+let stockData = require("./data/stock.json");
+
+var gis = require("g-i-s-j");
 
 function Logic() {
   const [snackers, setSnackers] = useState(null);
@@ -25,46 +30,29 @@ function Logic() {
 
   // fetches snack data
   useEffect(() => {
-    fetch("https://s3.amazonaws.com/misc-file-snack/MOCK_SNACKER_DATA.json")
+    fetch("https://cors-anywhere.herokuapp.com/https://s3.amazonaws.com/misc-file-snack/MOCK_SNACKER_DATA.json")
       .then((response) => response.json())
-      .then((data) => setSnackers(data));
+      .then((data) => setSnackers(data))
+      .catch((error) => {
+        console.error("Error:", error);
+      });
 
     // fetches product list
-    fetch("https://ca.desknibbles.com/products.json?limit=250")
+    fetch("https://cors-anywhere.herokuapp.com/https://ca.desknibbles.com/products.json?limit=250")
       .then((response) => response.json())
       .then((data) => {
         setStock(data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
       });
-    //fetch beaver urls
 
+    //fetch beaver urls
     const logBeaverResults = (error, results) => {
       if (error) {
         console.log(error);
       } else {
         setBeavers(results);
-        /*function toDataURL(url, callback) {
-          var xhr = new XMLHttpRequest();
-          xhr.onload = function () {
-            var reader = new FileReader();
-            reader.onloadend = function () {
-              callback(reader.result);
-            };
-            reader.readAsDataURL(xhr.response);
-          };
-          xhr.open("GET", url);
-          xhr.responseType = "blob";
-          xhr.send();
-        }
-        let dataArr = [];
-        results.forEach((beaver) => {
-          toDataURL(beaver.url, function (dataUrl) {
-            dataArr = [...dataArr, dataUrl];
-            console.log(dataArr);
-          });
-          console.log(dataArr);
-        });
-        console.log(dataArr);
-      }*/
       }
     };
     gis("beaver", logBeaverResults);
@@ -85,14 +73,13 @@ function Logic() {
     <>
       {snackers && stock && beavers && (
         <>
-        <Display
-          snacker={snackers[snackerIndex]}
-          product={stock.products[stockIndex]}
-          verb={verbs[verbIndex]}
-          beaverUrl={beavers[beaverIndex].url}
-          
-        />
-        <Button generateIndices={generateIndices} />
+          <Display
+            snacker={snackers[snackerIndex]}
+            product={stock.products[stockIndex]}
+            verb={verbs[verbIndex]}
+            beaverUrl={beavers[beaverIndex].url}
+          />
+          <Button generateIndices={generateIndices} />
         </>
       )}
     </>
