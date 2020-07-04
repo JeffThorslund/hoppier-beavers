@@ -4,7 +4,7 @@ function Header() {
   return (
     <div className="Header">
       <div className="title">
-        <b>Hoppier</b> just landed the contract of lifetime.
+        <b>Hoppier</b> just landed the contract of a lifetime.
       </div>
       <div className="body">
         A <b>colony of beavers</b> just moved their freshly funded biotech
