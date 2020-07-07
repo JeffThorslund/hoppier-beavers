@@ -10,11 +10,10 @@ function Header() {
         A <b>colony of beavers</b> just moved their freshly funded biotech
         startup to a pond in High Park, Toronto. Their agile team can't push{" "}
         <b>killer commits</b> without <b>killer snacks</b>. Dried apricot bars
-        and vegan quinoa patties just don't have that <b>special crunch</b>. A
-        lone tear runs down Cassy's <b>pale cheek</b> as he clears off his desk.
+        and vegan quinoa patties just don't have that <b>special crunch</b>. A{" "}
+        <b>lone tear</b> runs down Emil's pale cheek as he clears off his desk.
         <br /> <br />
-        Sometimes leadership means{" "}
-        <b>feeding office supplies to beavers.</b>
+        Sometimes leadership means <b>feeding office supplies to beavers.</b>
       </div>
     </div>
   );
